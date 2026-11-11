@@ -1,0 +1,691 @@
+/* Hope Anchored in Christ — Lunara-style theme: clean white, dark navy text, rose pink accents, soft lavender footer */
+:root {
+  --navy: #1B2A4E;
+  --navy-light: #2a3d68;
+  --gold: #e91e63;
+  --gold-dark: #c2185b;
+  --ivory: #ffffff;
+  --cream: #fdf2f5;
+  --sage: #a8c8a5;
+  --sage-light: #eaf6ec;
+  --blush: #f8bbd0;
+  --ink: #2b2b2b;
+  --muted: #6b6b6b;
+  --line: #e9e2ec;
+  --green-ok: #2e7d4f;
+  --red-no: #a63a3a;
+  --pastel-pink: #fdeef2;
+  --pastel-mint: #eaf6ec;
+  --pastel-butter: #fdf6dd;
+  --pastel-lilac: #f1ecf9;
+  --pastel-sky: #e8f1fa;
+  --pastel-peach: #fdeede;
+  --rose: #e91e63;
+  --rose-dark: #c2185b;
+  --lavender: #ede7f6;
+  --lavender-deep: #d1c4e9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  background: var(--ivory);
+  color: var(--ink);
+  line-height: 1.6;
+}
+h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, serif; color: var(--navy); }
+a { color: var(--navy-light); }
+a:hover { color: var(--gold-dark); }
+
+/* Header — clean white, like Lunara */
+.site-header {
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(27, 42, 78, 0.08);
+  color: var(--navy); position: sticky; top: 0; z-index: 10;
+}
+.header-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0.7rem 1rem;
+  display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+}
+.brand { color: var(--navy); text-decoration: none; font-size: 1.25rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 0.6rem; }
+.brand-logo { height: 2.6rem; width: auto; border-radius: 10px; display: block; }
+.main-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+.main-nav a { color: var(--navy); text-decoration: none; font-weight: 700; font-family: "Playfair Display", Georgia, serif; font-size: 1.05rem; letter-spacing: 0.01em; }
+.nav-toggle { display: none; }
+.main-nav a:hover { color: var(--gold-dark); }
+.header-search { margin-left: auto; display: flex; gap: 0.4rem; }
+.header-search input {
+  padding: 0.4rem 0.6rem; border: 1px solid var(--gold); border-radius: 999px;
+  background: #fff; min-width: 180px; font-size: 0.95rem;
+}
+.header-search button, .btn {
+  background: var(--gold); color: #fff; border: none; border-radius: 999px;
+  padding: 0.45rem 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none;
+  display: inline-block; font-size: 0.95rem;
+}
+.header-search button:hover, .btn:hover { background: var(--gold-dark); color: #fff; }
+
+/* Banner */
+.banner { position: relative; }
+.banner img { display: block; width: 100%; height: auto; }
+/* Lower banner — full-width strip above the footer, on every page */
+.lower-banner img { display: block; width: 100%; height: auto; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.banner-title {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.92); border: 3px solid var(--rose);
+  border-radius: 16px; padding: 1rem 1.8rem; text-align: center; max-width: 92%;
+}
+.banner-title h1 { margin: 0; font-size: clamp(1.3rem, 4vw, 2.2rem); letter-spacing: 0.04em; }
+.banner-title p { margin: 0.3rem 0 0; font-style: italic; color: var(--navy); }
+.about-photo { display: block; width: 100%; max-width: 720px; margin: 0 auto 1.5rem; border-radius: 12px; }
+
+/* About page enrichment — same words and photo, more visual interest */
+.about-photo-frame { max-width: 720px; margin: 0 auto 1.5rem; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 0.6rem; box-shadow: 0 4px 16px rgba(27, 42, 78, 0.10); }
+.about-photo-frame .about-photo { margin: 0; }
+.about-page h3 { border-left: 4px solid var(--gold); padding-left: 0.7rem; }
+.about-lead::first-letter { font-family: "Playfair Display", Georgia, serif; font-size: 3.2rem; line-height: 0.85; float: left; padding: 0.3rem 0.5rem 0 0; color: var(--navy); font-weight: 700; }
+.about-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.2rem 0; }
+
+/* Layout */
+.content { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.page-intro { color: var(--muted); max-width: 720px; }
+.verse-band {
+  background: linear-gradient(105deg, #fce4ec 0%, #f3e5f5 55%, #ede7f6 100%);
+  color: var(--navy); border-left: 6px solid var(--gold);
+  padding: 1rem 1.4rem; border-radius: 16px; font-size: 1.1rem; margin: 1.5rem 0;
+}
+.stats { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.2rem 0; }
+.stat {
+  background: #fff; border: 1px solid var(--line); border-radius: 16px;
+  padding: 0.7rem 1.2rem; text-align: center; flex: 1 1 120px;
+  box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08);
+}
+.stat strong { display: block; font-size: 1.6rem; color: var(--navy); font-family: "Playfair Display", Georgia, serif; }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+/* Stats stay white, like Lunara cards */
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: 16px; position: relative;
+  padding: 1rem 1.2rem; text-decoration: none; color: inherit; display: block;
+  box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.card:hover { box-shadow: 0 8px 22px rgba(27, 42, 78, 0.15); transform: translateY(-2px); }
+/* Cards stay white, like Lunara product cards */
+/* Line art (Lorraine's own drawings) on collection tiles and blog posts */
+.card-art { width: 100%; height: auto; display: block; border-radius: 12px; margin-bottom: 0.6rem; background: #fff; }
+.post-art { width: 100%; height: auto; display: block; border-radius: 16px; margin-bottom: 1.2rem; background: #fff; }
+.card h3 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.card .meta { color: var(--muted); font-size: 0.9rem; margin: 0.2rem 0; }
+.card .snippet { margin: 0.4rem 0 0; font-size: 0.95rem; }
+.store-card img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.6rem; }
+.store-card .price { font-weight: 700; color: var(--navy); font-size: 1.1rem; margin: 0.3rem 0; }
+.buy-btn {
+  display: inline-block; background: var(--gold); color: #fff; text-decoration: none;
+  border-radius: 999px; padding: 0.5rem 1.4rem; font-weight: 700; margin-top: 0.4rem;
+}
+.buy-btn:hover { background: var(--gold-dark); color: #fff; }
+/* ---------- timeline ---------- */
+.tl { position: relative; margin: 1.5rem 0 0 0.6rem; padding-left: 1.8rem; border-left: 3px solid var(--gold); }
+.tl-era { position: relative; margin: 2.2rem 0 1rem -1.8rem; padding-left: 1.8rem; font-size: 1.4rem; font-weight: 700; color: var(--navy); font-family: Georgia, "Times New Roman", serif; }
+.tl-era::before { content: ""; position: absolute; left: -11px; top: 0.3rem; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--gold); }
+.tl-node { position: relative; margin: 0 0 1.4rem; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.2rem; box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08); }
+.tl-node::before { content: ""; position: absolute; left: calc(-1.8rem - 9px); top: 1.4rem; width: 12px; height: 12px; border-radius: 50%; background: var(--navy); border: 3px solid var(--gold); }
+.tl-node h3 { margin: 0.15rem 0 0.3rem; font-size: 1.2rem; }
+.tl-node h3 a { color: var(--navy); text-decoration: none; }
+.tl-node h3 a:hover { text-decoration: underline; }
+.tl-date { margin: 0; font-weight: 700; color: var(--gold-dark); font-size: 0.9rem; }
+.tl-desc { margin: 0.3rem 0; }
+.tl-meta { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.9rem; font-style: italic; }
+.tl-conn { margin: 0.55rem 0 0; font-size: 0.9rem; line-height: 1.7; }
+.conn-label { font-weight: 700; color: var(--muted); margin-right: 0.3rem; }
+.conn-chip { display: inline-block; background: var(--sage-light); color: var(--navy); border-radius: 999px; padding: 0.1rem 0.65rem; font-weight: 600; text-decoration: none; margin: 0.1rem 0.25rem 0.1rem 0; }
+.conn-chip:hover { text-decoration: underline; }
+.conn-chip.gold { background: var(--pastel-butter); }
+.conn-plain { margin-right: 0.25rem; }
+.map-figure { margin: 1rem 0 1.5rem; }
+.map-figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.study-body img { width: 100%; max-width: 720px; height: auto; display: block; margin: 1rem auto; border: 1px solid var(--line); border-radius: 8px; }
+.map-figure figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.35rem; }
+/* ---------- nature tiles ---------- */
+.nature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.nature-tile { display: block; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.15s, transform 0.15s; }
+.nature-tile:hover { box-shadow: 0 6px 18px rgba(27, 42, 78, 0.15); transform: translateY(-2px); }
+.nature-tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.nature-tile-name { display: block; background: var(--navy); color: #fff; font-family: "Playfair Display", Georgia, serif; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.6rem 0.8rem; }
+.nature-tile-cat { display: block; color: var(--muted); font-size: 0.85rem; padding: 0.35rem 0.8rem 0.6rem; }
+.nature-figure { margin: 1rem 0 1.5rem; }
+.nature-figure img { width: 100%; max-width: 720px; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.nature-figure figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.35rem; }
+.havenbrook-portrait { margin: 1rem 0 1.5rem; }
+.havenbrook-portrait img { width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto; border: 1px solid var(--line); border-radius: 8px; }
+.havenbrook-card { display: flex; gap: 0.9rem; align-items: center; }
+.havenbrook-thumb { height: 76px; width: auto; flex-shrink: 0; border-radius: 8px; }
+.webtoon-cover { width: 100%; height: auto; display: block; border-radius: 8px; margin-bottom: 0.75rem; }
+.webtoon-reader { max-width: 640px; margin: 0 auto; }
+.webtoon-panel { margin: 0; }
+.webtoon-panel img { width: 100%; height: auto; display: block; border: 2px solid #1B2A4E; border-radius: 8px; }
+.webtoon-caption { background: #1B2A4E; color: #fff; font-style: italic; padding: 0.6rem 0.9rem; border-radius: 8px; margin: 0.6rem 0; }
+.webtoon-bubble { background: #fff; border: 2px solid #1B2A4E; border-radius: 16px; padding: 0.55rem 0.9rem; margin: 0.6rem 0; max-width: 88%; position: relative; }
+.webtoon-bubble.right { margin-left: auto; background: #fdf2f6; }
+.webtoon-bubble::after { content: ""; position: absolute; left: 22px; bottom: -9px; width: 14px; height: 14px; background: #fff; border-right: 2px solid #1B2A4E; border-bottom: 2px solid #1B2A4E; transform: rotate(45deg); }
+.webtoon-bubble.right::after { left: auto; right: 22px; background: #fdf2f6; }
+.webtoon-scene { text-align: center; margin: 1.5rem 0 0.75rem; }
+.webtoon-scene span { display: inline-block; font-weight: 700; letter-spacing: 0.04em; color: #c2185b; border-top: 2px solid #e91e63; border-bottom: 2px solid #e91e63; padding: 0.4rem 1.2rem; }
+.webtoon-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 1rem 0; }
+.badge {
+  display: inline-block; background: var(--sage-light); color: var(--navy);
+  border-radius: 999px; padding: 0.1rem 0.65rem; font-size: 0.8rem; font-weight: 700;
+  margin-right: 0.35rem;
+}
+.badge.gold { background: var(--pastel-butter); }
+.badge.fulfilled { background: #dcefe3; color: var(--green-ok); }
+.badge.partial { background: #fdf0d5; color: #8a6d1a; }
+.badge.future { background: #e3eaf7; color: var(--navy); }
+.badge.debated { background: #fbe4e4; color: var(--red-no); }
+.word-script { font-size: 1.8rem; color: var(--navy); font-weight: 700; }
+
+/* Controls */
+.controls { display: flex; flex-direction: column; gap: 0.7rem; margin: 1rem 0; }
+.controls input[type="search"] {
+  padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 999px;
+  font-size: 1rem; width: 100%; max-width: 520px; background: #fff;
+}
+.chips { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+.chip-label { font-weight: 700; color: var(--navy); margin-right: 0.2rem; }
+.chip {
+  border: 1px solid var(--gold); background: #fff; color: var(--navy);
+  border-radius: 999px; padding: 0.25rem 0.8rem; cursor: pointer; font-size: 0.9rem;
+}
+.chip.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+/* Filter menu (v225): one button + collapsible panel on every generic
+   list page. Panel stacks full-width; native selects keep long value
+   lists usable. */
+.filter-menu { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+.filter-panel { display: none; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.2rem; box-shadow: 0 2px 10px rgba(27,42,78,0.08); width: 100%; max-width: 520px; box-sizing: border-box; }
+.filter-panel.open { display: flex; flex-direction: column; gap: 0.7rem; }
+.filter-panel p { margin: 0; }
+.filter-field { display: flex; flex-direction: column; gap: 0.25rem; font-weight: 700; color: var(--navy); }
+.filter-field select { padding: 0.5rem 0.8rem; border: 1px solid var(--line); border-radius: 999px; font-size: 1rem; background: #fff; color: var(--navy); width: 100%; }
+.filter-count { color: var(--navy); }
+#quizCategorySelect, #exploreJump {
+  padding: 0.5rem 0.8rem; border: 1px solid var(--line); border-radius: 999px;
+  font-size: 1rem; background: #fff; color: var(--navy); max-width: 520px;
+}
+.back-link { display: inline-block; margin-bottom: 0.8rem; font-weight: 600; text-decoration: none; }
+
+/* Detail */
+.detail { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem 1.8rem; box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08); }
+.detail dl { margin: 0; }
+.detail dt { font-weight: 700; color: var(--navy); margin-top: 1rem; }
+.detail dt:first-child { margin-top: 0; }
+.detail dd { margin: 0.15rem 0 0 0; }
+.detail ul { margin: 0.3rem 0 0 1.2rem; }
+.related a { font-weight: 600; }
+
+/* Blog */
+.post-body { max-width: 740px; }
+.post-body img { width: 100%; max-width: 720px; height: auto; display: block; margin: 1rem auto; border: 1px solid var(--line); border-radius: 8px; }
+.bible-verses p { line-height: 1.9; margin: 0 0 1rem; }
+.bible-verses sup { color: var(--gold-dark); font-weight: 700; font-size: 0.75em; }
+.bible-verses a { text-decoration: underline; }
+.post-body blockquote {
+  border-left: 4px solid var(--gold); margin: 1.2rem 0; padding: 0.4rem 1rem;
+  font-style: italic; color: var(--navy); background: var(--cream); border-radius: 0 8px 8px 0;
+}
+.post-meta { color: var(--muted); }
+
+/* Blog post teaser cards — horizontal, like the mockup's bottom row */
+.post-row-list { display: grid; gap: 1rem; margin-top: 1rem; }
+.post-row-card {
+  display: flex; background: #fff; border: 1px solid var(--line); border-radius: 16px;
+  overflow: hidden; text-decoration: none; color: inherit;
+  box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.post-row-card:hover { box-shadow: 0 8px 22px rgba(27, 42, 78, 0.15); transform: translateY(-2px); }
+.post-row-art { width: 220px; flex-shrink: 0; object-fit: cover; display: block; }
+.post-row-body { padding: 1.2rem 1.4rem; flex: 1; min-width: 0; }
+.post-row-label { display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.3rem; }
+.post-row-card h3 { margin: 0 0 0.4rem; font-size: 1.3rem; }
+.post-row-excerpt { margin: 0 0 0.5rem; color: var(--ink); }
+.post-row-excerpt:empty { display: none; }
+.post-row-meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.6rem; }
+.post-row-more { font-weight: 700; color: var(--gold-dark); }
+
+/* Quiz */
+.quiz-score {
+  background: var(--navy); color: #fff; border-radius: 999px;
+  padding: 0.6rem 1rem; font-weight: 700; margin: 1rem 0;
+}
+.question-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem 1.4rem; margin: 1rem 0; box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08); }
+.options { display: grid; gap: 0.5rem; margin-top: 0.8rem; }
+.option-btn {
+  text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 12px;
+  padding: 0.6rem 0.9rem; cursor: pointer; font-size: 1rem; font-family: inherit;
+}
+.option-btn:hover:not(:disabled) { border-color: var(--gold); }
+.option-btn.correct { background: #d9eddf; border-color: var(--green-ok); font-weight: 700; }
+.option-btn.wrong { background: #fde3e3; border-color: var(--red-no); }
+.option-btn:disabled { cursor: default; opacity: 0.95; }
+.explanation { background: var(--sage-light); border-radius: 12px; padding: 0.7rem 1rem; margin-top: 0.8rem; }
+.quiz-btn { background: var(--gold); color: #fff; border: none; border-radius: 999px; padding: 0.7rem 1.4rem; font-size: 1rem; font-family: inherit; cursor: pointer; margin-top: 1rem; }
+.quiz-btn:hover { background: var(--gold-dark); color: #fff; }
+.quiz-btn-link { display: inline-block; text-decoration: none; }
+.quiz-progress { color: var(--muted); font-weight: 700; margin: 0.5rem 0; }
+.quiz-grade { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem 1.4rem; margin: 1rem 0; box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08); }
+.grade-big { font-size: 1.3rem; font-weight: 700; color: var(--navy); }
+.grade-pct { font-size: 1.1rem; font-weight: 700; }
+.quiz-reading { background: var(--cream); border-left: 4px solid var(--gold); border-radius: 8px; padding: 0.8rem 1rem; margin: 1rem 0; }
+.quiz-reading a { font-weight: 700; color: var(--navy); }
+
+/* Footer — soft lavender gradient, like Lunara */
+.site-footer { background: linear-gradient(180deg, #f3e5f5 0%, #ede7f6 45%, #d1c4e9 100%); color: var(--navy); text-align: center; padding: 1.5rem 1rem 2rem; }
+.site-footer strong { color: var(--navy); }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; justify-content: center; margin: 0.8rem 0; }
+.footer-nav a { color: var(--gold-dark); text-decoration: none; font-size: 0.9rem; }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; justify-content: center; margin: 0.8rem 0; padding-top: 0.8rem; border-top: 1px solid rgba(27, 42, 78, 0.15); }
+.footer-legal a { color: var(--gold-dark); text-decoration: none; font-size: 0.9rem; }
+.footer-note { font-size: 0.85rem; opacity: 0.8; }
+.empty, .loading { color: var(--muted); padding: 2rem 0; text-align: center; }
+
+@media (max-width: 640px) {
+  .banner-title { padding: 0.7rem 1rem; }
+  .header-search { margin-left: 0; width: 100%; }
+  .header-search input { flex: 1; min-width: 0; }
+  .detail { padding: 1rem; }
+}
+
+/* ---------- responsive: tablet (2 columns) ---------- */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .nature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- responsive: desktop (centered column, 3 columns) ---------- */
+@media (min-width: 1100px) {
+  .header-inner, .content { max-width: 1200px; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .nature-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- responsive: mobile ---------- */
+@media (max-width: 700px) {
+  .header-inner { padding: 0.6rem 0.75rem; gap: 0.6rem; }
+  .brand { font-size: 1.05rem; }
+  .brand-logo { height: 2.2rem; }
+  .nav-toggle { display: inline-block; margin-left: auto; background: #fff; color: var(--navy); border: 1px solid var(--gold); border-radius: 999px; padding: 0.45rem 1rem; font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 1rem; cursor: pointer; }
+  .main-nav { display: none; }
+  .main-nav.open { display: flex; flex-direction: column; gap: 0; width: 100%; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 2px 12px rgba(27, 42, 78, 0.08); padding: 0.4rem 0; }
+  .main-nav.open a { font-size: 1.05rem; padding: 0.6rem 1rem; border-bottom: 1px solid var(--line); }
+  .main-nav.open a:last-child { border-bottom: none; }
+  .header-search { margin-left: 0; width: 100%; }
+  .header-search input { flex: 1; min-width: 0; }
+  .content { padding: 1rem 0.75rem 2.5rem; }
+  h2 { font-size: 1.5rem; }
+  .banner-title { padding: 0.7rem 1rem; }
+  .card-grid, .nature-grid { grid-template-columns: 1fr; }
+  .card, .question-card, .quiz-grade { padding: 1rem; }
+  .detail { padding: 1rem; }
+  .verse-band { font-size: 1rem; padding: 0.8rem 1rem; }
+  .stat { flex: 1 1 100px; padding: 0.6rem 0.8rem; }
+  .stat strong { font-size: 1.3rem; }
+  .tl { margin-left: 0.2rem; padding-left: 1.2rem; }
+  .tl-era { margin-left: -1.2rem; padding-left: 1.2rem; font-size: 1.2rem; }
+  .tl-node { padding: 0.8rem 1rem; }
+  .tl-node::before { left: calc(-1.2rem - 9px); }
+  .options { grid-template-columns: 1fr; }
+  .option-btn { width: 100%; }
+  .quiz-btn { width: 100%; text-align: center; }
+  .controls input[type="search"] { max-width: none; }
+  .footer-nav { gap: 0.4rem 0.8rem; }
+  .post-row-card { flex-direction: column; }
+  .post-row-art { width: 100%; aspect-ratio: 16 / 9; }
+  .post-row-body { padding: 1rem; }
+}
+
+/* ---------- Bible verse study notes ---------- */
+.verse-note { background: none; border: none; color: var(--gold-dark); cursor: pointer; font-weight: 700; padding: 0 0.15rem; font-size: 0.95em; line-height: 1; }
+.verse-note:hover { color: var(--gold); }
+.geo-thumb { width: 100%; height: 110px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem; display: block; }
+
+/* ---------- Bible book study (expandable sections + tables) ---------- */
+.study { margin-top: 1.5rem; }
+.study-intro { font-size: 1.05rem; }
+.study-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; }
+.study-section { background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08); margin-bottom: 0.8rem; overflow: hidden; }
+.study-section summary { cursor: pointer; font-weight: 700; color: var(--navy); padding: 0.9rem 1.2rem; border-left: 4px solid var(--gold); }
+.study-section summary:hover { color: var(--gold-dark); }
+.study-body { padding: 0 1.2rem 1.2rem; }
+.study-body h3, .study-body h4 { color: var(--navy); margin-top: 1rem; }
+.study-body blockquote { border-left: 4px solid var(--gold); margin: 0.8rem 0; padding: 0.3rem 1rem; color: var(--navy); }
+.study-table { overflow-x: auto; margin: 0.8rem 0; }
+.study-table table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.study-table th { background: #f3e5f5; color: var(--navy); text-align: left; padding: 0.5rem 0.7rem; border: 1px solid var(--line); }
+.study-table td { padding: 0.5rem 0.7rem; border: 1px solid var(--line); vertical-align: top; }
+
+
+/* Storybook reader */
+.storybook-card { margin: 1rem 0; }
+.storybook-card .btn { margin: 0.4rem 0.4rem 0 0; }
+.storybook-list { list-style: none; padding: 0; margin-top: 1rem; max-width: 720px; }
+.storybook-list li { border-bottom: 1px solid var(--line); }
+.storybook-list a { display: block; padding: 0.7rem 0.2rem; font-weight: 600; text-decoration: none; }
+.storybook-list a:hover { color: var(--gold-dark); }
+.storybook-page { background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(27, 42, 78, 0.10); padding: 1.5rem; max-width: 720px; margin-top: 1rem; }
+.storybook-page h2 { margin-top: 0; }
+.storybook-page p { line-height: 1.75; font-size: 1.05rem; }
+.storybook-nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 720px; margin-top: 1rem; gap: 0.5rem; }
+.storybook-progress { color: var(--muted); font-weight: 600; }
+.storybook-more { max-width: 720px; margin-top: 1rem; }
+
+/* Art gallery */
+.gallery-card { margin: 1rem 0; }
+.card blockquote { border-left: 4px solid var(--gold); margin: 0.8rem 0; padding: 0.3rem 1rem; color: var(--navy); font-style: italic; }
+.card blockquote cite { display: block; margin-top: 0.3rem; font-style: normal; font-weight: 700; font-size: 0.9rem; }
+
+/* Animated home page (home only — other pages stay still) */
+.banner { overflow: hidden; }
+.is-home .banner img { animation: home-kenburns 20s ease-in-out infinite alternate; }
+@keyframes home-kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
+@keyframes home-fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.is-home #app > h2, .is-home #app > .page-intro, .is-home .stats, .is-home .verse-band { animation: home-fade-up 0.7s ease both; }
+.is-home #app > .page-intro { animation-delay: 0.08s; }
+.is-home .stats { animation-delay: 0.16s; }
+.is-home .verse-band { animation-delay: 0.24s; }
+.is-home .home-grid .card { animation: home-fade-up 0.6s ease both; }
+.is-home .home-grid .card:nth-child(2) { animation-delay: 0.05s; }
+.is-home .home-grid .card:nth-child(3) { animation-delay: 0.1s; }
+.is-home .home-grid .card:nth-child(4) { animation-delay: 0.15s; }
+.is-home .home-grid .card:nth-child(5) { animation-delay: 0.2s; }
+.is-home .home-grid .card:nth-child(6) { animation-delay: 0.25s; }
+@media (prefers-reduced-motion: reduce) {
+  .is-home .banner img, .is-home #app > h2, .is-home #app > .page-intro, .is-home .stats, .is-home .verse-band, .is-home .home-grid .card { animation: none !important; }
+}
+.verif-box { border: 1px solid var(--line); border-radius: 12px; background: var(--cream); padding: 0.9rem 1rem; margin: 1rem 0; }
+.verif-box .badge { font-size: 0.85rem; }
+.verif-meaning { margin-left: 0.4rem; }
+.verif-sources, .verif-reviewed { margin-top: 0.5rem; font-size: 0.95rem; overflow-wrap: anywhere; }
+
+/* Genealogy family tree */
+.genealogy-card { margin: 1rem 0; }
+.atlas-card { margin: 1rem 0; }
+.atlas-card .btn { margin: 0.4rem 0.4rem 0 0; }
+.atlas-map { position: relative; z-index: 0; height: 420px; border: 1px solid var(--line); border-radius: 16px; margin: 1rem 0; }
+@media (max-width: 700px) { .atlas-map { height: 320px; } }
+#atlasSearch { padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 999px; font-size: 1rem; }
+.atlas-pin { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.35); }
+.atlas-pin.probable { background: var(--navy); }
+.atlas-row { border: 1px solid var(--line); border-radius: 16px; padding: 0.8rem 1rem; margin: 0.6rem 0; background: #fff; }
+.atlas-badge { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--gold-dark); border: 1px solid var(--gold); border-radius: 999px; padding: 0.1rem 0.6rem; margin-left: 0.5rem; vertical-align: middle; }
+.atlas-badge.unknown { color: var(--muted); border-color: var(--line); }
+.atlas-name-btn { background: none; border: none; padding: 0; font: inherit; color: var(--navy-light); text-decoration: underline; cursor: pointer; }
+.atlas-name-btn:hover { color: var(--gold-dark); }
+.atlas-note { color: var(--muted); }
+#genSearch { width: 100%; max-width: 520px; padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 999px; font-size: 1rem; }
+.gen-results { list-style: none; padding: 0; margin-top: 1rem; max-width: 720px; }
+.gen-results li { border-bottom: 1px solid var(--line); padding: 0.7rem 0.2rem; }
+.gen-results a { font-weight: 600; text-decoration: none; }
+.gen-results a:hover { color: var(--gold-dark); }
+.gen-context { color: var(--muted); font-size: 0.9rem; font-weight: 400; }
+.gen-panel { background: #fff; border-radius: 16px; box-shadow: 0 4px 16px rgba(27, 42, 78, 0.10); padding: 1.5rem; max-width: 720px; margin-top: 1rem; }
+.gen-panel h2 { margin-top: 0; }
+.gen-panel h3 { margin-top: 1.4rem; }
+.gen-note { border-left: 4px solid var(--gold); padding: 0.3rem 1rem; color: var(--navy); font-style: italic; }
+.gen-rel-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+.gen-rel-list li { padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+.gen-rel-list a { font-weight: 600; text-decoration: none; }
+.gen-rel-list a:hover { color: var(--gold-dark); }
+.gen-tree-link { font-size: 0.85rem; font-weight: 400; }
+.gen-refs { font-size: 0.95rem; }
+.gen-chain { font-weight: 600; line-height: 1.8; }
+.gen-chain a { text-decoration: none; }
+.gen-chain a:hover { color: var(--gold-dark); }
+.gen-chain-note { color: var(--muted); font-size: 0.9rem; }
+
+/* =====================================================================
+   GENEALOGY INTERACTIVE PATCH — styles (append to assets/style.css)
+   Theme-matched: white cards, navy #1B2A4E text, rose pink #e91e63
+   accents (the site's --gold), soft lavender footer untouched.
+   Reuses the existing .tl spine for the timeline view; only the
+   toggle, tree, and current-person highlight are new.
+   ===================================================================== */
+
+/* Toggle + section shell (shared by person panels and the start view) */
+.gen-interactive { margin-top: 1.5rem; max-width: 100%; }
+.gen-interactive h3 { margin-bottom: 0.6rem; }
+.gen-view-toggle { display: inline-flex; gap: 0; border: 2px solid var(--gold); border-radius: 999px; overflow: hidden; margin-bottom: 0.8rem; }
+.gen-view-toggle button { border: 0; background: #fff; color: var(--navy); font-weight: 700; font-size: 0.95rem; padding: 0.45rem 1.3rem; cursor: pointer; }
+.gen-view-toggle button.active { background: var(--gold); color: #fff; }
+.gen-view-toggle button:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.gen-view-hint { color: var(--muted); font-size: 0.9rem; }
+
+/* Tree: horizontal scroll inside the container so a wide tree never
+   breaks the page layout; on a phone the tree scrolls sideways. */
+.gen-tree-scroll { overflow-x: auto; overflow-y: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; padding: 0.5rem 0; box-shadow: 0 2px 10px rgba(27, 42, 78, 0.08); }
+.gen-tree-svg { display: block; margin: 0 auto; }
+.gen-tree-hint { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 700px) {
+  .gen-tree-hint { font-weight: 600; color: var(--navy); }
+}
+.gen-tree-ctrls { display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem; align-items: center; margin: 0.4rem 0 0.8rem; font-size: 0.9rem; }
+.gen-tree-ctrls button { border: 1px solid var(--gold); background: #fff; color: var(--gold-dark); border-radius: 999px; padding: 0.25rem 0.9rem; font-weight: 700; cursor: pointer; }
+.gen-tree-ctrls button:hover { background: var(--cream); }
+.gen-tree-footnote { color: var(--muted); font-size: 0.9rem; max-width: 720px; }
+.gen-tree-foot { max-width: 720px; }
+.gen-tree-foot:empty { display: none; }
+.gen-tree-foot p { margin: 0.7rem 0; }
+
+/* SVG node styling */
+.gtn-line { stroke: var(--gold); stroke-width: 2; }
+.gtn-box { fill: #fff; stroke: var(--line); stroke-width: 1.5; }
+.gtn-box-center { fill: #fdf2f5; stroke: var(--gold); stroke-width: 2.5; }
+.gtn-box-loop { fill: #fff; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.gtn-name { fill: var(--navy); font-weight: 700; font-size: 13px; font-family: inherit; }
+.gtn-name:hover { fill: var(--gold-dark); }
+.gtn-sub { fill: var(--muted); font-size: 11px; font-family: inherit; }
+.gtn-head { fill: #fff; stroke: var(--gold); stroke-width: 1.5; }
+.gtn-head-none { fill: #f7f2f7; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.gtn-head-name { fill: var(--navy); font-weight: 700; font-size: 12px; font-family: inherit; }
+.gtn-head-name:hover { fill: var(--gold-dark); }
+.gtn-head-label { fill: var(--muted); font-size: 11px; font-style: italic; font-family: inherit; }
+.gtn-btn { cursor: pointer; }
+.gtn-btn-bg { fill: var(--gold); }
+.gtn-btn-txt { fill: #fff; font-size: 12px; font-weight: 700; font-family: inherit; }
+
+/* Timeline view: the existing .tl spine is reused; this only marks
+   the selected person and styles the connector + era lines. */
+.gen-tl-current { border: 2px solid var(--gold); box-shadow: 0 4px 16px rgba(233, 30, 99, 0.15); }
+.gen-tl-conn { margin: 0 0 0.4rem 0.2rem; color: var(--gold-dark); font-size: 0.9rem; }
+.gen-tl-era { margin: 0.3rem 0; font-weight: 700; color: var(--gold-dark); font-size: 0.9rem; }
+
+/* ---------- Theme toggle (v195) ---------- */
+.theme-toggle {
+  background: transparent; color: var(--navy); border: 1px solid var(--gold);
+  border-radius: 999px; padding: 0.45rem 1rem; font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; white-space: nowrap; font-family: inherit;
+}
+.theme-toggle:hover { background: var(--cream); }
+
+/* ---------- Dark view (v195) ----------
+   Everything below is scoped to html[data-theme="dark"], so light mode
+   renders exactly as before. Palette keeps the site's identity: deep
+   navy surfaces, near-white text, the rose accent kept (brightened only
+   where dark rose text would fail on dark). Images, artwork, and photos
+   are NEVER filtered or inverted — her art stays true. Raster map tiles
+   are untouched; only the atlas page chrome changes. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ivory: #0e1730;
+  --cream: #1b2747;
+  --sage-light: #1d3a2a;
+  --pastel-butter: #3a2f14;
+  --ink: #edf0f7;
+  --muted: #a9b2c6;
+  --line: #2e3d63;
+  --navy-light: #b9c6e4;
+  --gold-dark: #f06292;
+  --green-ok: #6fbf8f;
+  --red-no: #e57373;
+}
+/* Light text wherever the light theme used navy for text (--navy itself
+   stays #1B2A4E so navy-background components keep working). */
+html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3,
+html[data-theme="dark"] .brand, html[data-theme="dark"] .main-nav a,
+html[data-theme="dark"] .detail dt, html[data-theme="dark"] .stat strong,
+html[data-theme="dark"] .store-card .price, html[data-theme="dark"] .chip-label,
+html[data-theme="dark"] .chip, html[data-theme="dark"] .word-script,
+html[data-theme="dark"] .grade-big, html[data-theme="dark"] .tl-era,
+html[data-theme="dark"] .tl-node h3 a, html[data-theme="dark"] .study-section summary,
+html[data-theme="dark"] .study-body h3, html[data-theme="dark"] .study-body h4,
+html[data-theme="dark"] .study-table th, html[data-theme="dark"] .quiz-reading a,
+html[data-theme="dark"] .conn-chip, html[data-theme="dark"] .badge,
+html[data-theme="dark"] .gen-view-toggle button, html[data-theme="dark"] .nav-toggle,
+html[data-theme="dark"] .theme-toggle, html[data-theme="dark"] .about-lead::first-letter,
+html[data-theme="dark"] .site-footer, html[data-theme="dark"] .site-footer strong,
+html[data-theme="dark"] .banner-title p, html[data-theme="dark"] .post-body blockquote,
+html[data-theme="dark"] .card blockquote, html[data-theme="dark"] .study-body blockquote,
+html[data-theme="dark"] .gen-note, html[data-theme="dark"] .verse-band,
+html[data-theme="dark"] #quizCategorySelect, html[data-theme="dark"] #exploreJump {
+  color: #eef1f7;
+}
+/* Dark surfaces (was #fff). */
+html[data-theme="dark"] .site-header, html[data-theme="dark"] .stat,
+html[data-theme="dark"] .card, html[data-theme="dark"] .tl-node,
+html[data-theme="dark"] .nature-tile, html[data-theme="dark"] .detail,
+html[data-theme="dark"] .post-row-card, html[data-theme="dark"] .question-card,
+html[data-theme="dark"] .quiz-grade, html[data-theme="dark"] .study-section,
+html[data-theme="dark"] .storybook-page, html[data-theme="dark"] .gen-panel,
+html[data-theme="dark"] .gen-tree-scroll, html[data-theme="dark"] .atlas-row,
+html[data-theme="dark"] .about-photo-frame, html[data-theme="dark"] .main-nav.open,
+html[data-theme="dark"] .card-art, html[data-theme="dark"] .post-art {
+  background: #16213f;
+}
+html[data-theme="dark"] .header-search input,
+html[data-theme="dark"] .controls input[type="search"],
+html[data-theme="dark"] #quizCategorySelect, html[data-theme="dark"] #exploreJump,
+html[data-theme="dark"] #atlasSearch, html[data-theme="dark"] #genSearch,
+html[data-theme="dark"] .option-btn, html[data-theme="dark"] .gen-view-toggle button,
+html[data-theme="dark"] .gen-tree-ctrls button, html[data-theme="dark"] .nav-toggle {
+  background: #16213f; color: #edf0f7;
+}
+html[data-theme="dark"] .filter-panel { background: #16213f; }
+html[data-theme="dark"] .filter-field, html[data-theme="dark"] .filter-count { color: #eef1f7; }
+html[data-theme="dark"] .filter-field select { background: #16213f; color: #edf0f7; }
+html[data-theme="dark"] .theme-toggle:hover { background: var(--cream); }
+/* Verse band + banner title: light gradients become deep navy ones. */
+html[data-theme="dark"] .verse-band {
+  background: linear-gradient(105deg, #3a1f33 0%, #2a2140 55%, #1d2542 100%);
+}
+html[data-theme="dark"] .banner-title { background: rgba(13, 22, 46, 0.94); }
+/* Footer: soft lavender gradient becomes a deep muted lavender-navy. */
+html[data-theme="dark"] .site-footer {
+  background: linear-gradient(180deg, #1a2140 0%, #232a4a 45%, #2b3358 100%);
+}
+html[data-theme="dark"] .footer-legal { border-top-color: rgba(255, 255, 255, 0.15); }
+/* Timeline spine dots: lighter navy so the dots stay visible on dark. */
+html[data-theme="dark"] .tl-era::before { border-color: #16213f; }
+html[data-theme="dark"] .tl-node::before { background: #3a4f7d; }
+/* Study tables + quiz answers: light fills become dark tints. */
+html[data-theme="dark"] .study-table th { background: #2a2440; }
+html[data-theme="dark"] .option-btn.correct { background: #1d3a2a; }
+html[data-theme="dark"] .option-btn.wrong { background: #3d1f24; }
+html[data-theme="dark"] .badge.fulfilled { background: #1d3a2a; }
+html[data-theme="dark"] .badge.partial { background: #3a2f14; color: #e8c66a; }
+html[data-theme="dark"] .badge.future { background: #22345a; }
+html[data-theme="dark"] .badge.debated { background: #3d1f24; }
+/* Genealogy SVG: fills follow the surfaces, text follows the ink. */
+html[data-theme="dark"] .gtn-box, html[data-theme="dark"] .gtn-box-loop,
+html[data-theme="dark"] .gtn-head { fill: #16213f; }
+html[data-theme="dark"] .gtn-box-center { fill: #2a2140; }
+html[data-theme="dark"] .gtn-head-none { fill: #232a44; }
+html[data-theme="dark"] .gtn-name, html[data-theme="dark"] .gtn-head-name { fill: #eef1f7; }
+
+/* ---------- retro homepage bands (v217, home only) ----------
+   Scoped to .retro-home (the viewHome wrapper), so no other page is
+   restyled. Palette is inspired by the retro reference Lorraine sent
+   (teal hero, cream about, coral portfolio) in original CSS only:
+   white text on the deep teal, dark navy text on cream and coral. */
+.retro-home .retro-band { padding: 2rem 1.5rem; margin: 0 0 1.5rem; border-radius: 6px; }
+.retro-home .retro-teal { background: #1F7673; color: #fff; text-align: center; }
+.retro-home .retro-cream { background: #F7ECD7; color: #2b2b2b; }
+.retro-home .retro-coral { background: #F0907A; color: #1B2A4E; }
+.retro-home .retro-paper { background: #fff; border: 1px solid var(--line); }
+.retro-home .retro-display { font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.05; }
+.retro-home .retro-teal .retro-display { color: #fff; font-size: clamp(2.2rem, 7vw, 4rem); margin: 0.3rem 0 0.5rem; }
+.retro-home .retro-display-dark { color: #1B2A4E; font-size: clamp(1.9rem, 5vw, 2.8rem); margin: 0 0 0.8rem; }
+.retro-home .retro-eyebrow { margin: 0; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.9rem; color: #F7ECD7; }
+.retro-home .retro-tagline { font-size: 1.25rem; font-weight: 600; margin: 0 0 1.2rem; color: #fff; }
+.retro-home .retro-ribbon { display: inline-block; background: #F7ECD7; color: #1B2A4E; border-radius: 4px; padding: 0.7rem 1.2rem; margin: 0; font-style: italic; max-width: 680px; }
+.retro-home .retro-intro { color: #2b2b2b; max-width: none; font-size: 1.05rem; }
+.retro-home .retro-band-intro { color: #1B2A4E; font-weight: 600; }
+.retro-home .retro-badges { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin: 1.4rem 0; }
+.retro-home .retro-badge { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-decoration: none; color: #1B2A4E; font-weight: 700; width: 130px; text-align: center; }
+.retro-home .retro-badge img { width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 4px solid #1F7673; background: #fff; display: block; }
+.retro-home .retro-badge:hover img { border-color: var(--gold-dark); }
+.retro-home .retro-tiles .retro-tile { background: #fff; }
+.retro-home .retro-subhead { grid-column: 1 / -1; font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; text-transform: uppercase; letter-spacing: 0.05em; color: #1B2A4E; margin: 0.8rem 0 0; font-size: 1.6rem; }
+.retro-home .retro-tile h3 { color: #1B2A4E; }
+.retro-home .stats { margin: 0; }
+.retro-home .stat { background: #fff; }
+.retro-home .stat strong { font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; font-size: 2rem; letter-spacing: 0.03em; }
+@media (max-width: 700px) {
+  .retro-home .retro-band { padding: 1.4rem 1rem; }
+  .retro-home .retro-badges { gap: 0.8rem; }
+  .retro-home .retro-badge { width: 100px; font-size: 0.9rem; }
+  .retro-home .retro-badge img { width: 84px; height: 84px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .retro-home .card, .retro-home .retro-badge img { transition: none; }
+}
+/* Dark view: same bands, darkened so text stays readable. */
+html[data-theme="dark"] .retro-home .retro-teal { background: #14544F; }
+html[data-theme="dark"] .retro-home .retro-cream { background: #2B2419; color: #F2E8D5; }
+html[data-theme="dark"] .retro-home .retro-coral { background: #6E3428; color: #FDE8DE; }
+html[data-theme="dark"] .retro-home .retro-display-dark, html[data-theme="dark"] .retro-home .retro-band-intro,
+html[data-theme="dark"] .retro-home .retro-intro, html[data-theme="dark"] .retro-home .retro-badge,
+html[data-theme="dark"] .retro-home .retro-subhead, html[data-theme="dark"] .retro-home .retro-tile h3 { color: #F2E8D5; }
+html[data-theme="dark"] .retro-home .retro-tiles .retro-tile, html[data-theme="dark"] .retro-home .stat,
+html[data-theme="dark"] .retro-home .retro-paper { background: #16213f; }
+html[data-theme="dark"] .retro-home .retro-ribbon { background: #2B2419; color: #F2E8D5; }
+html[data-theme="dark"] .retro-home .retro-eyebrow { color: #F2E8D5; }
+html[data-theme="dark"] .retro-home .retro-badge img { border-color: #3AAFA9; background: #16213f; }
+
+/* ---------- guided path (v219, home only) ---------- */
+.retro-home .retro-step { margin: 0 0 2rem; }
+.retro-home .retro-step:last-child { margin-bottom: 0.5rem; }
+.retro-home .retro-step-head { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.8rem; }
+.retro-home .retro-step-num { font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; font-size: 3rem; line-height: 1; color: #1F7673; }
+.retro-home .retro-step-title { font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.7rem; margin: 0; color: #1B2A4E; }
+.retro-home .retro-step-desc { margin: 0.2rem 0 0; color: #2b2b2b; }
+.retro-home .retro-doors .retro-door h3 { color: #1B2A4E; }
+.retro-home .retro-browse-all { margin: 1.5rem 0 0; font-weight: 600; }
+html[data-theme="dark"] .retro-home .retro-step-num { color: #7FCFC9; }
+html[data-theme="dark"] .retro-home .retro-step-title, html[data-theme="dark"] .retro-home .retro-step-desc { color: #F2E8D5; }
+
+/* ---------- read aloud (Listen, v229) ---------- */
+.listen-btn { margin: 0.6rem 0 1rem; }
+.audio-bar[hidden] { display: none; }
+.audio-bar {
+  position: fixed; left: 50%; bottom: 1rem; transform: translateX(-50%);
+  z-index: 100; display: flex; align-items: center; gap: 0.6rem;
+  background: #1B2A4E; color: #fff; border-radius: 999px;
+  padding: 0.55rem 0.7rem 0.55rem 1rem;
+  box-shadow: 0 8px 24px rgba(27, 42, 78, 0.35);
+  max-width: calc(100% - 2rem); flex-wrap: wrap; justify-content: center;
+}
+.audio-bar-label { font-weight: 700; white-space: nowrap; }
+.audio-bar button {
+  background: #e91e63; color: #fff; border: none; border-radius: 999px;
+  padding: 0.45rem 0.9rem; font-weight: 700; cursor: pointer; font-size: 0.95rem;
+}
+.audio-bar button:hover { background: #c2185b; }
+.audio-voice-select { background: #fff; color: #1B2A4E; border: 0; border-radius: 999px; padding: 0.4rem 0.6rem; font-size: 0.9rem; max-width: 13rem; }
+html[data-theme="dark"] .audio-bar { background: #0F1B33; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55); }
+@media (max-width: 700px) {
+  .audio-bar { bottom: 0.6rem; padding: 0.5rem 0.6rem; gap: 0.4rem; }
+  .audio-bar button { padding: 0.4rem 0.7rem; font-size: 0.9rem; }
+}

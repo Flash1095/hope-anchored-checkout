@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "what-is-faith",
+    "title": "What Is Faith?",
+    "date": "2026-10-27",
+    "category": "Foundations of Faith",
+    "scripture": "Hebrews 11:1",
+    "series": "Foundations of Faith",
+    "part": "1",
+    "file": "content/posts/what-is-faith.md"
+  },
+  {
+    "slug": "christianity-invites-testing-because-its-true",
+    "title": "Christianity Invites Testing — Because It’s True",
+    "date": "2026-10-25",
+    "category": "Christian Apologetics",
+    "scripture": "1 Thessalonians 5:21; Acts 17:11; 1 Peter 3:15; 1 Corinthians 15:14–17; John 20:24–31",
+    "series": "",
+    "part": "",
+    "file": "content/posts/christianity-invites-testing-because-its-true.md"
+  },
+  {
+    "slug": "do-animals-go-to-heaven",
+    "title": "Do Animals Go to Heaven? A Biblical Case for Hope in God's Redemption of Creation",
+    "date": "2026-10-25",
+    "category": "Christian Apologetics",
+    "scripture": "Romans 8:21-22",
+    "series": "",
+    "part": "",
+    "file": "content/posts/do-animals-go-to-heaven.md"
+  },
+  {
+    "slug": "how-to-study-the-bible",
+    "title": "How to Study the Bible",
+    "date": "2026-10-25",
+    "category": "Bible Study Guides",
+    "scripture": "2 Timothy 2:15",
+    "series": "",
+    "part": "",
+    "file": "content/posts/how-to-study-the-bible.md"
+  },
+  {
+    "slug": "why-hope-anchored-in-christ",
+    "title": "Why 'Hope Anchored in Christ'? The Verse That Started This Blog",
+    "date": "2026-10-23",
+    "category": "Devotionals & Hope for Today",
+    "scripture": "Hebrews 6:19",
+    "series": "",
+    "part": "",
+    "file": "content/posts/why-hope-anchored-in-christ.md"
+  }
+]
